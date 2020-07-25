@@ -10,6 +10,10 @@ import 'package:listing_app/views/detail/item_details.dart';
 import 'item_card.dart';
 
 class Body extends StatefulWidget {
+
+  final menu;
+  Body({Key key, @required this.menu}) : super(key: key);
+
   @override
   _BodyState createState() => _BodyState();
 }
@@ -33,6 +37,7 @@ class _BodyState extends State<Body> {
 
   @override
   void initState() {
+    print("Menu clicked is ${widget.menu}");
     _fetchCategoryData();
     super.initState();
   }

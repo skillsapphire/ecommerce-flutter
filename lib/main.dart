@@ -24,15 +24,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Listing App',
+      title: 'MoCity App',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
       //home: HomeScreen(),
       routes: {
-      "/": (ctx) => WelcomeScreen(),
-      "/home": (ctx) => HomeScreen(),
+      "/welcome": (ctx) => WelcomeScreen(),
+      "/": (ctx) => HomeScreen(menu: "News"),
     },
     );
   }
