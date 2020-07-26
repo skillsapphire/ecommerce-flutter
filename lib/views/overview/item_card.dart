@@ -23,15 +23,21 @@ class ItemCard extends StatelessWidget {
               padding: EdgeInsets.all(kDefaultPaddin),
               // For  demo we use fixed height  and width
               // Now we dont need them
-              // height: 180,
-              // width: 160,
+               height: MediaQuery.of(context).size.height,
+               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
+                color: appPrimaryColor,
               ),
               child: Text(
-                "${item.id}",
-                //child: Image.asset(product.image),
+                "${item.id} \n ${item.title} \n ${item.content}",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
               ),
+             /* child: Hero(
+                tag: "${item.id} \n ${item.title} \n ${item.content}",
+                child: Image.asset(product.image),
+              ),*/
             ),
           ),
           Padding(
@@ -39,13 +45,13 @@ class ItemCard extends StatelessWidget {
             child: Text(
               // products is out demo list
               item.title,
-              style: TextStyle(color: kTextLightColor),
+              style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
-          Text(
+          /*Text(
             "${item.content}",
             style: TextStyle(fontWeight: FontWeight.bold),
-          )
+          )*/
         ],
       ),
     );

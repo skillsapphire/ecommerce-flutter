@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       //home: HomeScreen(),
       routes: {
       "/welcome": (ctx) => WelcomeScreen(),
-      "/": (ctx) => HomeScreen(menu: "News"),
+      "/": (ctx) => HomeScreen(menu: "Doctors"),
     },
     );
   }

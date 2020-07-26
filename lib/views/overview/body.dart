@@ -37,7 +37,7 @@ class _BodyState extends State<Body> {
 
   @override
   void initState() {
-    print("Menu clicked is ${widget.menu}");
+    //print("Menu clicked is ${widget.menu}");
     _fetchCategoryData();
     super.initState();
   }
@@ -60,7 +60,7 @@ class _BodyState extends State<Body> {
       _isLoadingCategory = true;
     });
 
-    _apiItemCategoryResponse = await itemCategoryService.getItemCategoryList();
+    _apiItemCategoryResponse = await itemCategoryService.getItemCategoryList(widget.menu);
     this.itemCategoryList = _apiItemCategoryResponse.data;
     _fetchItemData(this.itemCategoryList[selectedIndex].id);
 
@@ -77,7 +77,7 @@ class _BodyState extends State<Body> {
          Padding(
             padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
             child: SizedBox(
-              height: 25,
+              height: 26,
               child: _isLoadingCategory ? Center(child: Text("Loading categories...")) : ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: this.itemCategoryList.length,
@@ -88,7 +88,7 @@ class _BodyState extends State<Body> {
         Expanded(
           child: _isLoadingItem ? Center(child: CircularProgressIndicator()) :Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-            child: this.itemList.length == 0 ? Center(child: Text("No listing found.")) :GridView.builder(
+            child: this.itemList.length == 0 ? Center(child: Text("No data found.")) :GridView.builder(
                 itemCount: this.itemList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -129,6 +129,7 @@ class _BodyState extends State<Body> {
               this.itemCategoryList[index].name,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                fontSize: 16,
                 color: selectedIndex == index ? kTextColor : kTextLightColor,
               ),
             ),

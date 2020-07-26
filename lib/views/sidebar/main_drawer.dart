@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:listing_app/constants/ui_constants.dart';
 import 'package:listing_app/views/overview/home.dart';
 import 'package:listing_app/views/sidebar/menu_item.dart';
 
@@ -38,7 +39,7 @@ class _MainDrawerState extends State<MainDrawer> {
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  color: const Color(0xFF262AAA),
+                  color: appPrimaryColor,
                   child: Column(
                     children: <Widget>[
                       SizedBox(
@@ -70,6 +71,14 @@ class _MainDrawerState extends State<MainDrawer> {
                         color: Colors.white.withOpacity(0.3),
                         indent: 32,
                         endIndent: 32,
+                      ),
+                      MenuItem(
+                        icon: Icons.home,
+                        title: "Doctors",
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Doctors")));
+                        },
                       ),
                       MenuItem(
                         icon: Icons.home,
@@ -130,11 +139,15 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.card_giftcard,
                         title: "Shopping",
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Shopping")));
+                        },
                       ),
-                      MenuItem(
+                      /*MenuItem(
                         icon: Icons.card_giftcard,
                         title: "Events",
-                      ),
+                      ),*/
                       MenuItem(
                         icon: Icons.card_giftcard,
                         title: "About",

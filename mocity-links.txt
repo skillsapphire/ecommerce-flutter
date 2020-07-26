@@ -1,0 +1,3 @@
+http://skillsapphire.com/mocity/wp-json/wp/v2/listing?city=2&listingcategory=4&_fields=id,modified,listingtitle,listingdescription,listingimage
+http://skillsapphire.com/mocity/wp-json/wp/v2/listingcategory?_fields=id,name
+http://skillsapphire.com/mocity/wp-json/wp/v2/newscategory?_fields=id,name

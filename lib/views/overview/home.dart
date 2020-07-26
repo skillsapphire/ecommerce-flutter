@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listing_app/constants/ui_constants.dart';
 import 'package:listing_app/views/overview/body.dart';
 import 'package:listing_app/views/sidebar/main_drawer.dart';
 
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
   AppBar buildAppBar(context) {
     return AppBar(
       //automaticallyImplyLeading: false,
-      backgroundColor: const Color(0xFF262AAA),
+      backgroundColor: appPrimaryColor,
       title: Text("MoCity  $menu"),
       centerTitle: true,
       elevation: 0.2
