@@ -34,10 +34,14 @@ class _BodyState extends State<Body> {
 
   bool _isLoadingItem = false;
   bool _isLoadingCategory = false;
+  bool _isGridMenu = false;
 
   @override
   void initState() {
     //print("Menu clicked is ${widget.menu}");
+    if(widget.menu == 'Explore'){
+      _isGridMenu = true;
+    }
     _fetchCategoryData();
     super.initState();
   }
@@ -47,7 +51,7 @@ class _BodyState extends State<Body> {
       _isLoadingItem = true;
     });
 
-    _apiItemResponse = await itemService.getItemList(categoryId);
+    _apiItemResponse = await itemService.getItemList(categoryId, widget.menu);
     this.itemList = _apiItemResponse.data;
 
     setState(() { 
@@ -88,7 +92,8 @@ class _BodyState extends State<Body> {
         Expanded(
           child: _isLoadingItem ? Center(child: CircularProgressIndicator()) :Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-            child: this.itemList.length == 0 ? Center(child: Text("No data found.")) :GridView.builder(
+            child: this.itemList.length == 0 ? Center(child: Text("No data found.")) :
+            _isGridMenu ? GridView.builder(
                 itemCount: this.itemList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -105,7 +110,33 @@ class _BodyState extends State<Body> {
                               item: this.itemList[index],
                             ),
                           )),
-                    )),
+                    )
+            ): ListView.builder(
+                itemCount: this.itemList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailPage(
+                              item: this.itemList[index],
+                            ),
+                          ));
+                    },
+                    child: Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 8),
+                        child: Text(
+                          this.itemList[index].title,
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ),
+             );
+            })
           ),
         ),
       ],

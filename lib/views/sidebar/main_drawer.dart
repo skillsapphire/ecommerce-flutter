@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:listing_app/constants/ui_constants.dart';
+import 'package:listing_app/views/manage/edit_location.dart';
 import 'package:listing_app/views/overview/home.dart';
 import 'package:listing_app/views/sidebar/menu_item.dart';
 
@@ -51,19 +52,34 @@ class _MainDrawerState extends State<MainDrawer> {
                           style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w800),
                         ),
                         subtitle: Text(
-                          "www.skillsapphire.com",
+                          "Sambalpur",
                           style: TextStyle(
                             color: Color(0xFF1BB5FD),
-                            fontSize: 14,
+                            fontSize: 16,
                           ),
                         ),
                         leading: CircleAvatar(
                           child: Icon(
-                            Icons.perm_identity,
+                            Icons.location_city,
                             color: Colors.white,
                           ),
                           radius: 40,
                         ),
+                        trailing: CircleAvatar(
+                          child: Icon(
+                            Icons.edit_location,
+                            color: Colors.white,
+                          ),
+                          radius: 20,
+                        ),
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditLocation(),
+                          ));
+                        },    
                       ),
                       Divider(
                         height: 10,
@@ -73,7 +89,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         endIndent: 32,
                       ),
                       MenuItem(
-                        icon: Icons.home,
+                        icon: Icons.local_pharmacy,
                         title: "Doctors",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -81,7 +97,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.home,
+                        icon: Icons.info,
                         title: "News",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -89,7 +105,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.home,
+                        icon: Icons.list,
                         title: "Explore",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -97,7 +113,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.settings,
+                        icon: Icons.live_help,
                         title: "Emergency",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -105,7 +121,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.exit_to_app,
+                        icon: Icons.grain,
                         title: "Covid-19",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -113,7 +129,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.home,
+                        icon: Icons.local_hospital,
                         title: "Healthcare",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -121,7 +137,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.person,
+                        icon: Icons.school,
                         title: "Education",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -129,7 +145,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.shopping_basket,
+                        icon: Icons.card_travel,
                         title: "Tourism",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -137,7 +153,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         },
                       ),
                       MenuItem(
-                        icon: Icons.card_giftcard,
+                        icon: Icons.shopping_cart,
                         title: "Shopping",
                         onTap: () {
                           Navigator.of(context).pop();
@@ -149,8 +165,8 @@ class _MainDrawerState extends State<MainDrawer> {
                         title: "Events",
                       ),*/
                       MenuItem(
-                        icon: Icons.card_giftcard,
-                        title: "About",
+                        icon: Icons.contact_mail,
+                        title: "Contact",
                       ),
                      /* Divider(
                         height: 30,

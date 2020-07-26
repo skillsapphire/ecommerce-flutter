@@ -9,16 +9,24 @@ class Item {
   
   Item({this.id, this.title, this.content});
 
-  factory Item.fromJson(dynamic item) => _$ItemFromJson(item);
+  factory Item.fromJson(dynamic item, menu) => _$ItemFromJson(item, menu);
 }
 
-Item _$ItemFromJson(dynamic json) {
+Item _$ItemFromJson(dynamic json, menu) {
   //print("json ${json}");
   //print(json["id"].runtimeType);
+  int id; String title; String content;
 
-  int id = json["id"];
-  String title = json["listingtitle"];
-  String content = json["listingdescription"];
+    if(menu=='Doctors'){
+      id = json["id"];
+      title = json["doctor_name"];
+      content = json["doctor_description"];
+    }else if(menu=='Explore'){
+      id = json["id"];
+      title = json["listingtitle"];
+      content = json["listingdescription"];
+    }
+  
   
   return Item(
     id: id,

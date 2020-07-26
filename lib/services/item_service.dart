@@ -7,14 +7,57 @@ import 'package:listing_app/constants/app_constants.dart';
 
 class ItemService{
 
-  Future<APIResponse<List<Item>>> getItemList(var categoryId) {
-    return http.get(API_BASE_URL + '/listing?per_page=30&listingcategory=$categoryId').then((data) {
+  Future<APIResponse<List<Item>>> getItemList(var categoryId, var menu) {
+
+    var itemUrl = "newscategory";
+    if(menu=='Doctors'){
+      itemUrl = "doctor";
+    }else if(menu=='News'){
+      itemUrl = "news";
+    }else if(menu=='Explore'){
+      itemUrl = "listing";
+    }else if(menu=='Emergency'){
+      itemUrl = "emergency";
+    }else if(menu=='Covid-19'){
+      itemUrl = "covid19";
+    }else if(menu=='Healthcare'){
+      itemUrl = "health";
+    }else if(menu=='Education'){
+      itemUrl = "education";
+    }else if(menu=='Tourism'){
+      itemUrl = "tourism";
+    }else if(menu=='Shopping'){
+      itemUrl = "shopping";
+    }
+
+    var categoryUrl = "newscategory";
+    if(menu=='Doctors'){
+      categoryUrl = "doctorcategory";
+    }else if(menu=='News'){
+      categoryUrl = "newscategory";
+    }else if(menu=='Explore'){
+      categoryUrl = "listingcategory";
+    }else if(menu=='Emergency'){
+      categoryUrl = "emergencycategory";
+    }else if(menu=='Covid-19'){
+      categoryUrl = "covid19";
+    }else if(menu=='Healthcare'){
+      categoryUrl = "healthcategory";
+    }else if(menu=='Education'){
+      categoryUrl = "educationcategory";
+    }else if(menu=='Tourism'){
+      categoryUrl = "tourismcategory";
+    }else if(menu=='Shopping'){
+      categoryUrl = "shoppingcategory";
+    }
+
+    return http.get(API_BASE_URL + '/$itemUrl?per_page=30&$categoryUrl=$categoryId').then((data) {
       if (data.statusCode == 200) {
         final jsonData = jsonDecode(data.body);
         final items = <Item>[];
         for (var item in jsonData) {
           //print(item["listingtitle"]);
-          Item itemModel = Item.fromJson(item);
+          Item itemModel = Item.fromJson(item, menu);
           items.add(itemModel);
         }
         return APIResponse<List<Item>>(data: items);
