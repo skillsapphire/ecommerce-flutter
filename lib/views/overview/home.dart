@@ -1,3 +1,4 @@
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:listing_app/constants/ui_constants.dart';
 import 'package:listing_app/views/overview/body.dart';
@@ -13,13 +14,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       drawer: MainDrawer(),
-      body: WillPopScope(
+      body: Body(menu: menu)
+      /*WillPopScope(
         //Wrap out body with a `WillPopScope` widget that handles when a user is cosing current route
         onWillPop: () async {
           Future.value(false); //return a `Future` with false value so this route cant be popped or closed.
         },
         child: Body(menu: menu)
-      ),
+      ),*/
     );
   }
 
