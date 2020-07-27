@@ -26,8 +26,8 @@ class _BodyState extends State<Body> {
   APIResponse<List<Item>> _apiItemResponse;
   APIResponse<List<ItemCategory>> _apiItemCategoryResponse;
 
-  List<Item> itemList = [];
-  List<ItemCategory> itemCategoryList = [];
+  List<Item> itemList = new List<Item>();
+  List<ItemCategory> itemCategoryList = new List<ItemCategory>();
 
   // By default our first item will be selected
   int selectedIndex = 0;

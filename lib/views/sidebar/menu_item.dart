@@ -4,8 +4,9 @@ class MenuItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final Function onTap;
+  final Color iconColor;
 
-  const MenuItem({Key key, this.icon, this.title, this.onTap}) : super(key: key);
+  const MenuItem({Key key, this.icon, this.title, this.onTap, this.iconColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class MenuItem extends StatelessWidget {
           children: <Widget>[
             Icon(
               icon,
-              color: Colors.cyan,
+              color: iconColor,
               size: 30,
             ),
             SizedBox(

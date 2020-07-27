@@ -4,8 +4,10 @@ import 'package:listing_app/services/item_category_service.dart';
 import 'package:listing_app/services/item_service.dart';
 import 'package:listing_app/services/user_service.dart';
 import 'package:listing_app/views/Welcome/welcome_screen.dart';
+import 'package:listing_app/views/manage/edit_location.dart';
 import 'package:listing_app/views/overview/home.dart';
 import 'package:get_it/get_it.dart';
+import 'package:listing_app/views/splash/splash_screen.dart';
 
 void setupLocator() {
   GetIt.I.registerLazySingleton(() => ItemService());
@@ -13,7 +15,7 @@ void setupLocator() {
   GetIt.I.registerLazySingleton(() => UserService());
 }
 
-void main() {
+void main() async {
   setupLocator();
   runApp(MyApp());
 }
@@ -29,10 +31,12 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      //home: HomeScreen(),
+      //home: HomeScreen()
       routes: {
       "/welcome": (ctx) => WelcomeScreen(),
-      "/": (ctx) => HomeScreen(menu: "Doctors"),
+      "/home": (ctx) => HomeScreen(menu: "Doctors"),
+     //   "/": (ctx) => EditLocation(),
+      "/": (ctx) => SplashScreen(),
     },
     );
   }

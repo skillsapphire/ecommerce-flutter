@@ -4,3 +4,7 @@ http://skillsapphire.com/mocity/wp-json/wp/v2/newscategory?_fields=id,name
 
 ListTile 
 https://medium.com/@suragch/a-complete-guide-to-flutters-listtile-597a20a3d449
+
+https://www.tutorialkart.com/flutter/flutter-flatbutton/
+https://medium.com/flutterdevs/using-sharedpreferences-in-flutter-251755f07127
+https://medium.com/@rushabh.shah065/splash-screen-flutter-create-customize-splash-screen-for-flutter-android-ios-a380a199793c

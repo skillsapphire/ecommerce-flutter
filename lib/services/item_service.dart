@@ -4,11 +4,18 @@ import 'package:listing_app/models/item.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:listing_app/constants/app_constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ItemService{
+  
+  SharedPreferences _prefs;
+  int _cityId = 3;
 
-  Future<APIResponse<List<Item>>> getItemList(var categoryId, var menu) {
+  Future<APIResponse<List<Item>>> getItemList(var categoryId, var menu) async {
 
+    _prefs = await SharedPreferences.getInstance();
+    _cityId = _prefs.getInt('cityId');
+    
     var itemUrl = "newscategory";
     if(menu=='Doctors'){
       itemUrl = "doctor";
@@ -51,7 +58,7 @@ class ItemService{
       categoryUrl = "shoppingcategory";
     }
 
-    return http.get(API_BASE_URL + '/$itemUrl?per_page=30&$categoryUrl=$categoryId').then((data) {
+    return http.get(API_BASE_URL + '/$itemUrl?per_page=30&$categoryUrl=$categoryId&city=$_cityId').then((data) {
       if (data.statusCode == 200) {
         final jsonData = jsonDecode(data.body);
         final items = <Item>[];

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:listing_app/constants/ui_constants.dart';
 import 'package:listing_app/views/manage/edit_location.dart';
 import 'package:listing_app/views/overview/home.dart';
 import 'package:listing_app/views/sidebar/menu_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 //https://www.youtube.com/watch?v=iX07Xnn4ol8&t=12s
 class MainDrawer extends StatefulWidget {
@@ -14,22 +13,21 @@ class MainDrawer extends StatefulWidget {
 
 class _MainDrawerState extends State<MainDrawer> {
 
-  var apiRes, categories;
-  var menus = ["Healthcare", "Education", "Tourism", "Shopping", "Emergency"];
+  SharedPreferences _prefs;
+  String _cityName = 'Sambalpur';
+
   @override
   void initState() {
     super.initState();
-    //getCategoriesFromAPI();
+    //_cityId = prefs.getInt('cityId');
+    _loadWidget();
   }
 
-  getCategoriesFromAPI() async{
-    //apiRes = await http.get("/listingcategory?_fields=id,name");
-    //print(apiRes.body);// this is as string response, so it has to be converted to json
-    categories = ["Home", "Orders", "Details", "Profile"];//jsonDecode(apiRes.body);
-    //print(categories);
-    setState(() {
-      
-    });
+  _loadWidget() async {
+     _prefs = await SharedPreferences.getInstance();
+     setState(() {
+        _cityName = _prefs.getString('cityName');
+     });
   }
 
   @override
@@ -49,13 +47,14 @@ class _MainDrawerState extends State<MainDrawer> {
                       ListTile(
                         title: Text(
                           "MoCity",
-                          style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w800),
+                          style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w800),
                         ),
                         subtitle: Text(
-                          "Sambalpur",
+                          _cityName,
                           style: TextStyle(
-                            color: Color(0xFF1BB5FD),
+                            color: Colors.white70,
                             fontSize: 16,
+                            fontWeight: FontWeight.bold
                           ),
                         ),
                         leading: CircleAvatar(
@@ -91,6 +90,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.local_pharmacy,
                         title: "Doctors",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Doctors")));
@@ -99,6 +99,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.info,
                         title: "News",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "News")));
@@ -107,6 +108,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.list,
                         title: "Explore",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Explore")));
@@ -115,6 +117,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.live_help,
                         title: "Emergency",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Emergency")));
@@ -123,6 +126,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.grain,
                         title: "Covid-19",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Covid-19")));
@@ -131,6 +135,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.local_hospital,
                         title: "Healthcare",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Healthcare")));
@@ -139,6 +144,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.school,
                         title: "Education",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Education")));
@@ -147,6 +153,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.card_travel,
                         title: "Tourism",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Tourism")));
@@ -155,6 +162,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.shopping_cart,
                         title: "Shopping",
+                        iconColor: appMenuIconColor,
                         onTap: () {
                           Navigator.of(context).pop();
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(menu: "Shopping")));
@@ -167,6 +175,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       MenuItem(
                         icon: Icons.contact_mail,
                         title: "Contact",
+                        iconColor: appMenuIconColor,
                       ),
                      /* Divider(
                         height: 30,
