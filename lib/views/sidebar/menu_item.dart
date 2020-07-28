@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listing_app/constants/ui_constants.dart';
 
 class MenuItem extends StatelessWidget {
   final IconData icon;
@@ -26,7 +27,7 @@ class MenuItem extends StatelessWidget {
             ),
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
+              style: TextStyle(fontFamily: appFontFamily, fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
             )
           ],
         ),

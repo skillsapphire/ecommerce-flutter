@@ -73,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),*/
                       Text(
                           "MoCity",
-                          style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800),
+                          style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800),
                         ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
@@ -92,11 +92,11 @@ class _SplashScreenState extends State<SplashScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             Spacer(),
-                            Text(_versionName, style: TextStyle(color: Colors.white),),
+                            Text(_versionName, style: TextStyle(fontFamily: appFontFamily, color: Colors.white),),
                             Spacer(
                               flex: 4,
                             ),
-                            Text('Made In Sambalpur', style: TextStyle(color: Colors.white),),
+                            Text('Made in Sambalpur', style: TextStyle(fontFamily: appFontFamily, color: Colors.white),),
                             Spacer(),
                           ])
                     ],

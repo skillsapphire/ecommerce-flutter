@@ -47,11 +47,12 @@ class _MainDrawerState extends State<MainDrawer> {
                       ListTile(
                         title: Text(
                           "MoCity",
-                          style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w800),
+                          style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
                         ),
                         subtitle: Text(
                           _cityName,
                           style: TextStyle(
+                            fontFamily: appFontFamily,
                             color: Colors.white70,
                             fontSize: 16,
                             fontWeight: FontWeight.bold
@@ -66,7 +67,7 @@ class _MainDrawerState extends State<MainDrawer> {
                         ),
                         trailing: CircleAvatar(
                           child: Icon(
-                            Icons.edit_location,
+                            Icons.edit,
                             color: Colors.white,
                           ),
                           radius: 20,

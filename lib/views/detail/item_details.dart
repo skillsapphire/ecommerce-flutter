@@ -14,7 +14,7 @@ class DetailPage extends StatelessWidget {
         backgroundColor: appPrimaryColor,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text(item.title),
+          title: Text(item.title, style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),),
           elevation: 0.0,
         ),
         body: SingleChildScrollView(
@@ -31,6 +31,7 @@ class DetailPage extends StatelessWidget {
                 SizedBox(height: 10.0,),
                 Text("Post Id: ${item.id}",
                     style: TextStyle(
+                      fontFamily: appFontFamily,
                       fontSize: 18.0,
                       color: Colors.white,
                     ),
@@ -40,6 +41,7 @@ class DetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text("${item.title}",
                       style: TextStyle(
+                        fontFamily: appFontFamily,
                         fontSize: 18.0,
                         color: Colors.white,
                       ),
@@ -50,6 +52,7 @@ class DetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text("${item.content}",
                       style: TextStyle(
+                        fontFamily: appFontFamily,
                         //fontSize: 22.0,
                         color: Colors.white,
                       ),

@@ -131,7 +131,7 @@ class _BodyState extends State<Body> {
                             vertical: 20, horizontal: 8),
                         child: Text(
                           this.itemList[index].title,
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontFamily: appFontFamily, fontSize: 18),
                         ),
                       ),
                     ),
@@ -159,8 +159,9 @@ class _BodyState extends State<Body> {
             Text(
               this.itemCategoryList[index].name,
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontFamily: appFontFamily,
+                fontWeight: FontWeight.w900,
+                fontSize: 12,
                 color: selectedIndex == index ? kTextColor : kTextLightColor,
               ),
             ),

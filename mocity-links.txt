@@ -8,3 +8,6 @@ https://medium.com/@suragch/a-complete-guide-to-flutters-listtile-597a20a3d449
 https://www.tutorialkart.com/flutter/flutter-flatbutton/
 https://medium.com/flutterdevs/using-sharedpreferences-in-flutter-251755f07127
 https://medium.com/@rushabh.shah065/splash-screen-flutter-create-customize-splash-screen-for-flutter-android-ios-a380a199793c
+https://medium.com/@SebastianEngel/easy-push-notifications-with-flutter-and-firebase-cloud-messaging-d96084f5954f
+https://medium.com/@zhuoyuan93/flutter-share-plugin-flutter-share-me-1d3601b691ce
+https://www.digitalocean.com/community/tutorials/flutter-geolocator-plugin

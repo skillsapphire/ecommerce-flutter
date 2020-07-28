@@ -32,7 +32,7 @@ class ItemCard extends StatelessWidget {
               child: Text(
                 "${item.id} \n ${item.title} \n ${item.content}",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
               ),
              /* child: Hero(
                 tag: "${item.id} \n ${item.title} \n ${item.content}",
@@ -45,7 +45,7 @@ class ItemCard extends StatelessWidget {
             child: Text(
               // products is out demo list
               item.title,
-              style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(fontFamily: appFontFamily, color: kTextColor, fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
           /*Text(

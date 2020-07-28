@@ -5,6 +5,9 @@ const kTextLightColor = Color(0xFFACACAC);
 
 const kDefaultPaddin = 16.0;
 
+const appFontSize = 18.0;
+const appFontFamily = "Poppins";
+
 //https://coolors.co/palettes/trending
 //const appPrimaryColor =Color(0xFF535353); // Dark grey theme
 //const appPrimaryColor =Color(0xFF32a852); // Green theme

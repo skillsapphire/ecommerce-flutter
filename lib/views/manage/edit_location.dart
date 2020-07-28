@@ -53,7 +53,7 @@ class _EditLocationState extends State<EditLocation> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Update your location"),
+        title: Text("Update your location", style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),),
         backgroundColor: appPrimaryColor,
       ),
       body: Center(
@@ -61,7 +61,7 @@ class _EditLocationState extends State<EditLocation> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _hasSelectedLocation ? Text("Welcome to MoCity", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: appPrimaryColor),)
+              _hasSelectedLocation ? Text("Welcome to MoCity", style: TextStyle(fontFamily: appFontFamily, fontSize: 25, fontWeight: FontWeight.bold, color: appPrimaryColor),)
               : _cityName == null ? CircularProgressIndicator() : Text("Your current city: $_cityName", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: appPrimaryColor),),
               SizedBox(height: 30,),
               Icon(
