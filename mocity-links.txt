@@ -11,3 +11,10 @@ https://medium.com/@rushabh.shah065/splash-screen-flutter-create-customize-splas
 https://medium.com/@SebastianEngel/easy-push-notifications-with-flutter-and-firebase-cloud-messaging-d96084f5954f
 https://medium.com/@zhuoyuan93/flutter-share-plugin-flutter-share-me-1d3601b691ce
 https://www.digitalocean.com/community/tutorials/flutter-geolocator-plugin
+https://pusher.com/tutorials/flutter-listviews
+http://cogitas.net/custom-loading-animation-flutter/
+https://www.tutorialkart.com/flutter/flutter-listview/
+https://rive.app/
+https://github.com/FilledStacks/flutter-tutorials
+
+

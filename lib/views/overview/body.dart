@@ -152,7 +152,7 @@ class _BodyState extends State<Body> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -161,7 +161,7 @@ class _BodyState extends State<Body> {
               style: TextStyle(
                 fontFamily: appFontFamily,
                 fontWeight: FontWeight.w900,
-                fontSize: 12,
+                fontSize: 13,
                 color: selectedIndex == index ? kTextColor : kTextLightColor,
               ),
             ),
