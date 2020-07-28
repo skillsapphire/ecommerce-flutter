@@ -82,7 +82,7 @@ class _BodyState extends State<Body> {
             padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
             child: SizedBox(
               height: 26,
-              child: _isLoadingCategory ? Center(child: Text("Loading categories...")) : ListView.builder(
+              child: _isLoadingCategory ? Center(child: Text("Loading categories...",style: TextStyle(fontFamily:  appFontFamily))) : ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: this.itemCategoryList.length,
                 itemBuilder: (context, index) => buildCategory(index),
@@ -92,7 +92,7 @@ class _BodyState extends State<Body> {
         Expanded(
           child: _isLoadingItem ? Center(child: CircularProgressIndicator()) :Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-            child: this.itemList.length == 0 ? Center(child: Text("No data found.")) :
+            child: this.itemList.length == 0 ? Center(child: Text("No data found.", style: TextStyle(fontFamily:  appFontFamily),)) :
             _isGridMenu ? GridView.builder(
                 itemCount: this.itemList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
