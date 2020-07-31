@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/ui_constants.dart';
-import 'package:listing_app/views/overview/body.dart';
-import 'package:listing_app/views/sidebar/main_drawer.dart';
+import 'package:mocity/constants/ui_constants.dart';
+import 'package:mocity/views/overview/body.dart';
+import 'package:mocity/views/sidebar/main_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
 

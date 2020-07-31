@@ -1,9 +1,9 @@
 
-import 'package:listing_app/models/api_response.dart';
+import 'package:mocity/models/api_response.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:listing_app/constants/app_constants.dart';
-import 'package:listing_app/models/item_category.dart';
+import 'package:mocity/constants/app_constants.dart';
+import 'package:mocity/models/item_category.dart';
 
 class ItemCategoryService{
 

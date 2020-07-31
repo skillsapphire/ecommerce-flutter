@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/ui_constants.dart';
-import 'package:listing_app/models/item.dart';
+import 'package:mocity/constants/ui_constants.dart';
+import 'package:mocity/models/item.dart';
 
 class ItemCard extends StatelessWidget {
   final Item item;

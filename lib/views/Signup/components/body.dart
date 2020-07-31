@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:listing_app/views/Login/login_screen.dart';
-import 'package:listing_app/views/Signup/components/background.dart';
-import 'package:listing_app/views/Signup/components/or_divider.dart';
-import 'package:listing_app/views/Signup/components/social_icon.dart';
-import 'package:listing_app/views/components/already_have_an_account_acheck.dart';
-import 'package:listing_app/views/components/rounded_button.dart';
-import 'package:listing_app/views/components/rounded_input_field.dart';
-import 'package:listing_app/views/components/rounded_password_field.dart';
+import 'package:mocity/views/Login/login_screen.dart';
+import 'package:mocity/views/Signup/components/background.dart';
+import 'package:mocity/views/Signup/components/or_divider.dart';
+import 'package:mocity/views/Signup/components/social_icon.dart';
+import 'package:mocity/views/components/already_have_an_account_acheck.dart';
+import 'package:mocity/views/components/rounded_button.dart';
+import 'package:mocity/views/components/rounded_input_field.dart';
+import 'package:mocity/views/components/rounded_password_field.dart';
 
 class Body extends StatelessWidget {
   @override

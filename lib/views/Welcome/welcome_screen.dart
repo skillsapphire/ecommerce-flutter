@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/views/Welcome/components/body.dart';
+import 'package:mocity/views/Welcome/components/body.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/app_constants.dart';
-import 'package:listing_app/constants/ui_constants.dart';
+import 'package:mocity/constants/app_constants.dart';
+import 'package:mocity/constants/ui_constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:listing_app/views/overview/home.dart';
+import 'package:mocity/views/overview/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class EditLocation extends StatefulWidget {

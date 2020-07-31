@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
-import 'package:listing_app/constants/constants.dart';
-import 'package:listing_app/models/api_response.dart';
-import 'package:listing_app/models/user.dart';
-import 'package:listing_app/services/user_service.dart';
-import 'package:listing_app/views/Login/components/background.dart';
-import 'package:listing_app/views/Signup/signup_screen.dart';
-import 'package:listing_app/views/components/already_have_an_account_acheck.dart';
-import 'package:listing_app/views/components/rounded_button.dart';
-import 'package:listing_app/views/components/text_field_container.dart';
+import 'package:mocity/constants/constants.dart';
+import 'package:mocity/models/api_response.dart';
+import 'package:mocity/models/user.dart';
+import 'package:mocity/services/user_service.dart';
+import 'package:mocity/views/Login/components/background.dart';
+import 'package:mocity/views/Signup/signup_screen.dart';
+import 'package:mocity/views/components/already_have_an_account_acheck.dart';
+import 'package:mocity/views/components/rounded_button.dart';
+import 'package:mocity/views/components/text_field_container.dart';
 
 class Body extends StatefulWidget {
   const Body({

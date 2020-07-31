@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/ui_constants.dart';
+import 'package:mocity/constants/ui_constants.dart';
 
 class DetailPage extends StatelessWidget {
 

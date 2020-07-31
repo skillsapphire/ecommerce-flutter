@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/ui_constants.dart';
-import 'package:listing_app/views/manage/edit_location.dart';
-import 'package:listing_app/views/overview/home.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mocity/constants/ui_constants.dart';
+import 'package:mocity/services/push_notification_service.dart';
+import 'package:mocity/views/manage/edit_location.dart';
+import 'package:mocity/views/overview/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,6 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
   SharedPreferences _prefs;
   String _cityName;
   bool _hasSelectedLocation = false;
+
+  PushNotificationService get _pushNotificationService => GetIt.I<PushNotificationService>();
 
   String _versionName = 'v1.0';
   final splashDelay = 4;
@@ -37,6 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
     }else{
       _hasSelectedLocation = true;
     }
+    // Register for push notifications
+   // await _pushNotificationService.initialise();
     var _duration = Duration(seconds: splashDelay);
     return Timer(_duration, navigationPage);
   }

@@ -11,7 +11,8 @@ const appFontFamily = "Poppins";
 //https://coolors.co/palettes/trending
 //const appPrimaryColor =Color(0xFF535353); // Dark grey theme
 //const appPrimaryColor =Color(0xFF32a852); // Green theme
-const appPrimaryColor =Color(0xFF05668d); // Mat blue theme
+//const appPrimaryColor =Color(0xFF05668d); // Mat blue theme
+const appPrimaryColor =Color(0xFF142850); // Mat dark A blue theme
 //const appPrimaryColor =Color(0xFFff595e); // Mat orange theme
 //const appPrimaryColor = Color(0xFF0ead69); // Mat green theme
 //const appMenuIconColor = Color(0xFF00cecb);

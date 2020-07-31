@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:listing_app/constants/ui_constants.dart';
-import 'package:listing_app/models/api_response.dart';
-import 'package:listing_app/models/item.dart';
-import 'package:listing_app/models/item_category.dart';
-import 'package:listing_app/services/item_category_service.dart';
-import 'package:listing_app/services/item_service.dart';
-import 'package:listing_app/views/detail/item_details.dart';
+import 'package:mocity/constants/ui_constants.dart';
+import 'package:mocity/models/api_response.dart';
+import 'package:mocity/models/item.dart';
+import 'package:mocity/models/item_category.dart';
+import 'package:mocity/services/item_category_service.dart';
+import 'package:mocity/services/item_service.dart';
+import 'package:mocity/views/detail/item_details.dart';
 import 'item_card.dart';
 
 class Body extends StatefulWidget {

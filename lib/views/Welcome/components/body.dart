@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:listing_app/constants/constants.dart';
-import 'package:listing_app/views/Login/login_screen.dart';
-import 'package:listing_app/views/Signup/signup_screen.dart';
-import 'package:listing_app/views/Welcome/components/background.dart';
-import 'package:listing_app/views/components/rounded_button.dart';
+import 'package:mocity/constants/constants.dart';
+import 'package:mocity/views/Login/login_screen.dart';
+import 'package:mocity/views/Signup/signup_screen.dart';
+import 'package:mocity/views/Welcome/components/background.dart';
+import 'package:mocity/views/components/rounded_button.dart';
 
 class Body extends StatelessWidget {
   @override

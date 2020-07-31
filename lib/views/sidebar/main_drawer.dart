@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/ui_constants.dart';
-import 'package:listing_app/views/manage/edit_location.dart';
-import 'package:listing_app/views/overview/home.dart';
-import 'package:listing_app/views/sidebar/menu_item.dart';
+import 'package:mocity/constants/ui_constants.dart';
+import 'package:mocity/views/manage/edit_location.dart';
+import 'package:mocity/views/overview/home.dart';
+import 'package:mocity/views/sidebar/menu_item.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 //https://www.youtube.com/watch?v=iX07Xnn4ol8&t=12s

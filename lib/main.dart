@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/constants/constants.dart';
-import 'package:listing_app/services/item_category_service.dart';
-import 'package:listing_app/services/item_service.dart';
-import 'package:listing_app/services/user_service.dart';
-import 'package:listing_app/views/Welcome/welcome_screen.dart';
-import 'package:listing_app/views/overview/home.dart';
+import 'package:mocity/constants/constants.dart';
+import 'package:mocity/services/item_category_service.dart';
+import 'package:mocity/services/item_service.dart';
+import 'package:mocity/services/push_notification_service.dart';
+import 'package:mocity/services/user_service.dart';
+import 'package:mocity/views/Welcome/welcome_screen.dart';
+import 'package:mocity/views/overview/home.dart';
 import 'package:get_it/get_it.dart';
-import 'package:listing_app/views/splash/splash_screen.dart';
+import 'package:mocity/views/splash/splash_screen.dart';
 
 void setupLocator() {
   GetIt.I.registerLazySingleton(() => ItemService());
   GetIt.I.registerLazySingleton(() => ItemCategoryService());
   GetIt.I.registerLazySingleton(() => UserService());
+  GetIt.I.registerLazySingleton(() => PushNotificationService());
 }
 
 void main() async {

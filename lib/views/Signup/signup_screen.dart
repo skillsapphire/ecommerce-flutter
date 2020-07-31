@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listing_app/views/Signup/components/body.dart';
+import 'package:mocity/views/Signup/components/body.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
