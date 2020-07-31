@@ -92,7 +92,7 @@ class _BodyState extends State<Body> {
         Expanded(
           child: _isLoadingItem ? Center(child: CircularProgressIndicator()) :Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-            child: this.itemList.length == 0 ? Center(child: Text("No data found.", style: TextStyle(fontFamily:  appFontFamily),)) :
+            child: _isLoadingCategory ? Center(child: CircularProgressIndicator()) : this.itemList.length == 0 ? Center(child: Text("No data found.", style: TextStyle(fontFamily:  appFontFamily),)) :
             _isGridMenu ? GridView.builder(
                 itemCount: this.itemList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -111,38 +111,41 @@ class _BodyState extends State<Body> {
                             ),
                           )),
                     )
-            ): ListView.builder(
-                itemCount: this.itemList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              item: this.itemList[index],
-                            ),
-                          ));
-                    },
-                    child: Card(
-                      elevation: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 8),
-                        child: Text(
-                          this.itemList[index].title,
-                          style: TextStyle(fontFamily: appFontFamily, fontSize: 18),
-                        ),
-                      ),
-                    ),
-             );
-            })
+            ): _buildListView(context)
           ),
         ),
       ],
     );
   }
-
+    Widget _buildListView(BuildContext context) {
+      return ListView.separated(
+      itemCount: this.itemList.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          onTap: () =>{
+            Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(
+                      item: this.itemList[index],
+                    ),
+                  )
+                )  
+          },
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage("https://jssors8.azureedge.net/demos/img/gallery/720x480/006.jpg"),
+          ),
+          trailing: Icon(Icons.keyboard_arrow_right),
+          title: Text(this.itemList[index].title, style: TextStyle(fontFamily: appFontFamily, fontSize: 15),),
+          subtitle: Text(this.itemList[index].content), 
+        );
+      },
+      separatorBuilder: (context, index) {
+        return Divider(thickness: .5,);
+      },
+        );
+    }
+    
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {

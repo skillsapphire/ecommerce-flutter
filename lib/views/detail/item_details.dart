@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_share_me/flutter_share_me.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mocity/constants/ui_constants.dart';
 
 class DetailPage extends StatelessWidget {
@@ -16,12 +18,33 @@ class DetailPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: Text(item.title, style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),),
           elevation: 0.0,
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () async {
+                  var response =
+                      await FlutterShareMe().shareToSystem(msg: 'hello share, ${item.content}');
+                  if (response == 'success') {
+                    print('navigate success');
+                  }
+                },
+                child: SvgPicture.asset(
+                  'assets/icons/share.svg',
+                  height: 25,
+                  width: 25,
+                  color: Colors.white,
+                ),
+              )
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(height: 15,),
                 Hero(
                     tag: item.id,
                     child: CircleAvatar(
@@ -57,6 +80,61 @@ class DetailPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                   ),
+                ),
+                SizedBox(height: 20,), 
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Spacer(),
+                        RaisedButton(
+                          child: SvgPicture.asset(
+                            'assets/icons/whatsapp.svg',
+                            height: 20,
+                            width: 20,
+                          ),
+                          onPressed: () {
+                            FlutterShareMe().shareToWhatsApp(msg: 'hello whatsapp, ${item.content}');
+                          },
+                        ),
+                        Spacer(),
+                        RaisedButton(
+                          child: SvgPicture.asset(
+                            'assets/icons/facebook.svg',
+                            height: 20,
+                            width: 20,
+                          ),
+                          onPressed: () {
+                            FlutterShareMe().shareToFacebook(url: 'https://github.com/skillsapphire', msg: 'hello facebook, ${item.content}');
+                          },
+                        ),
+                        Spacer(),
+                        RaisedButton(
+                          child: SvgPicture.asset(
+                            'assets/icons/twitter.svg',
+                            height: 20,
+                            width: 20,
+                          ),
+                          onPressed: () {
+                            FlutterShareMe().shareToTwitter(msg: 'hello twitter, ${item.content}');
+                          },
+                        ),
+                        Spacer(),
+                        /*RaisedButton(
+                          child: SvgPicture.asset(
+                            'assets/icons/share.svg',
+                            height: 20,
+                            width: 20,
+                          ),
+                          onPressed: () async {
+                            var response =
+                                await FlutterShareMe().shareToSystem(msg: 'hello share, ${item.content}');
+                            if (response == 'success') {
+                              print('navigate success');
+                            }
+                          },
+                        ),
+                        Spacer(),*/
+                      ]
                 ),
               ],
             ),

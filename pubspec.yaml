@@ -33,6 +33,7 @@ dependencies:
   flutter_svg: ^0.17.4 # it help us to use SVG in our app
   shared_preferences: ^0.5.8
   firebase_messaging: ^6.0.16
+  flutter_share_me: ^0.9.1
 
 dev_dependencies:
   flutter_test:
