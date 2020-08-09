@@ -137,7 +137,7 @@ class _BodyState extends State<Body> {
           ),
           trailing: Icon(Icons.keyboard_arrow_right),
           title: Text(this.itemList[index].title, style: TextStyle(fontFamily: appFontFamily, fontSize: 15),),
-          subtitle: Text(this.itemList[index].content), 
+          subtitle: Text(this.itemList[index].subtitle), 
         );
       },
       separatorBuilder: (context, index) {

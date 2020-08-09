@@ -26,7 +26,7 @@ class ItemService{
     }else if(menu=='Emergency'){
       itemUrl = "emergency";
     }else if(menu=='Covid-19'){
-      itemUrl = "covid19";
+      itemUrl = "covid-19";
     }else if(menu=='Healthcare'){
       itemUrl = "health";
     }else if(menu=='Education'){
@@ -58,7 +58,7 @@ class ItemService{
       categoryUrl = "shoppingcategory";
     }
 
-    return http.get(API_BASE_URL + '/$itemUrl?per_page=30&$categoryUrl=$categoryId&city=$_cityId').then((data) {
+    return http.get(API_BASE_URL + '/$itemUrl?per_page=10&$categoryUrl=$categoryId&city=$_cityId').then((data) {
       if (data.statusCode == 200) {
         final jsonData = jsonDecode(data.body);
         final items = <Item>[];

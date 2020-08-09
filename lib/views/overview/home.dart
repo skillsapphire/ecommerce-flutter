@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
     return AppBar(
       //automaticallyImplyLeading: false,
       backgroundColor: appPrimaryColor,
-      title: Text("MoCity $menu", style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),),
+      title: Text("MoCity $menu", style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 20, fontWeight: FontWeight.w900),),
       centerTitle: true,
       elevation: 0.2
       /*actions: <Widget>[

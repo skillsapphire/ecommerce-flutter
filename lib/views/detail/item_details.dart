@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_share_me/flutter_share_me.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mocity/constants/ui_constants.dart';
@@ -16,7 +17,7 @@ class DetailPage extends StatelessWidget {
         backgroundColor: appPrimaryColor,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text(item.title, style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),),
+          title: Text(item.title, style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 20, fontWeight: FontWeight.w900),),
           elevation: 0.0,
           actions: <Widget>[
             Padding(
@@ -73,16 +74,10 @@ class DetailPage extends StatelessWidget {
                 SizedBox(height: 10.0,),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("${item.content}",
-                      style: TextStyle(
-                        fontFamily: appFontFamily,
-                        //fontSize: 22.0,
-                        color: Colors.white,
-                      ),
-                  ),
+                  child: Container(color: Colors.white70,child: Html(data: item.content)),
                 ),
                 SizedBox(height: 20,), 
-                Row(
+                /*Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Spacer(),
@@ -119,23 +114,8 @@ class DetailPage extends StatelessWidget {
                           },
                         ),
                         Spacer(),
-                        /*RaisedButton(
-                          child: SvgPicture.asset(
-                            'assets/icons/share.svg',
-                            height: 20,
-                            width: 20,
-                          ),
-                          onPressed: () async {
-                            var response =
-                                await FlutterShareMe().shareToSystem(msg: 'hello share, ${item.content}');
-                            if (response == 'success') {
-                              print('navigate success');
-                            }
-                          },
-                        ),
-                        Spacer(),*/
                       ]
-                ),
+                ),*/
               ],
             ),
           ),

@@ -1,6 +1,17 @@
+http://skillsapphire.com/mocity/wp-json/
+
 http://skillsapphire.com/mocity/wp-json/wp/v2/listing?city=2&listingcategory=4&_fields=id,modified,listingtitle,listingdescription,listingimage
 http://skillsapphire.com/mocity/wp-json/wp/v2/listingcategory?_fields=id,name
 http://skillsapphire.com/mocity/wp-json/wp/v2/newscategory?_fields=id,name
+
+COVID-19
+http://skillsapphire.com/mocity/wp-json/wp/v2/covid-19?_fields=id,listingtitle,listingdescription,contactno,alternateno,alternateno2,eamil,alternateemail,source,sourceurl
+http://skillsapphire.com/mocity/wp-json/wp/v2/covid19?_fields=id,name
+http://skillsapphire.com/mocity/wp-json/wp/v2/covid-19?city=3&covid19=40&_fields=id,listingtitle,listingdescription,contactno,alternateno,eamil,alternateemail,source,sourceurl
+
+DOCTOR
+http://skillsapphire.com/mocity/wp-json/wp/v2/doctor?city=3&doctorcategory=47&_fields=id,listingtitle,listingdescription,contactno,alternateno,alternateno2,eamil,alternateemail,source,sourceurl
+http://skillsapphire.com/mocity/wp-json/wp/v2/doctorcategory?_fields=id,name
 
 
 https://stackoverflow.com/questions/52283117/flutter-app-is-not-working-after-changing-package-name
@@ -24,6 +35,7 @@ http://cogitas.net/custom-loading-animation-flutter/
 https://www.tutorialkart.com/flutter/flutter-listview/
 https://rive.app/
 https://github.com/FilledStacks/flutter-tutorials
+https://stackoverflow.com/questions/53815485/how-to-show-html-string-in-text-widget-flutter
 mocityinfo@gmail.com
 
 https://www.freepik.com/

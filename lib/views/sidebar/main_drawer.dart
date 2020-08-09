@@ -47,7 +47,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       ListTile(
                         title: Text(
                           "MoCity",
-                          style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 22, fontWeight: FontWeight.w900),
+                          style: TextStyle(fontFamily: appFontFamily, color: Colors.white, fontSize: 20, fontWeight: FontWeight.w900),
                         ),
                         subtitle: Text(
                           _cityName,
